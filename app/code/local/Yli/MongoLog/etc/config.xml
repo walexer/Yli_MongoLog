@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<config>
+      <modules>
+        <Yli_MongoLog>
+          <version>0.1.0</version>
+        </Yli_MongoLog>
+      </modules>
+      <global>
+          <helpers>
+            <mongolog>
+              <class>Yli_MongoLog_Helper</class>
+            </mongolog>
+          </helpers>
+          <models>
+             <mongolog>
+                <class>Yli_MongoLog_Model</class>
+             </mongolog>
+          </models>
+          <log>
+            <core>
+                <writer_model>Yli_MongoLog_Model_Logwriter</writer_model>
+            </core>
+          </log>
+      </global>
+      <default>
+	    	<dev>
+	    		<mongolog>
+		    		<server>localhost</server>
+		    		<port>27017</port>
+		    		<db>log</db>
+		    		<collection>log</collection>
+	    		</mongolog>
+	    	</dev>
+	  </default>
+</config>
