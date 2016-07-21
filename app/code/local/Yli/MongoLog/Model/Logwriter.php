@@ -14,8 +14,14 @@ class Yli_MongoLog_Model_Logwriter extends Zend_Log_Writer_Abstract
         $port = Mage::getStoreConfig('dev/mongolog/port');
         $db = Mage::getStoreConfig('dev/mongolog/db');
         $collection = Mage::getStoreConfig('dev/mongolog/collection');
+        $username = Mage::getStoreConfig('dev/mongolog/username');
+        $password = Mage::getStoreConfig('dev/mongolog/password');
         try {
-            $mongo = new MongoClient("mongodb://$server:$port");
+            if ($username && $password){
+                $mongo = new MongoClient("mongodb://$server:$port",array("username" => $username, "password" => $password));
+            }else{
+                $mongo = new MongoClient("mongodb://$server:$port");
+            }
         } catch (Exception $e) {
             return;
         }
