@@ -29,6 +29,7 @@
 		    		<port>27017</port>
 		    		<db>log</db>
 		    		<collection>log</collection>
+		    		<split_file>0</split_file>
 	    		</mongolog>
 	    	</dev>
 	  </default>

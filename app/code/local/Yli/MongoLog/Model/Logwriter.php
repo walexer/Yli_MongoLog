@@ -14,6 +14,10 @@ class Yli_MongoLog_Model_Logwriter extends Zend_Log_Writer_Abstract
         $port = Mage::getStoreConfig('dev/mongolog/port');
         $db = Mage::getStoreConfig('dev/mongolog/db');
         $collection = Mage::getStoreConfig('dev/mongolog/collection');
+        $split_file = Mage::getStoreConfig('dev/mongolog/split_file');
+        if($split_file){
+            $collection = $this->_file;
+        }
         $username = Mage::getStoreConfig('dev/mongolog/username');
         $password = Mage::getStoreConfig('dev/mongolog/password');
         try {
