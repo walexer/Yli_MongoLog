@@ -17,7 +17,7 @@ class Yli_MongoLog_Model_Logwriter extends Zend_Log_Writer_Stream
             $server = Mage::getStoreConfig('dev/mongolog/server');
             $port = Mage::getStoreConfig('dev/mongolog/port');
             $db = Mage::getStoreConfig('dev/mongolog/db');
-            $collection = Zend_Log_Writer_Stream;
+            $collection = Mage::getStoreConfig('dev/mongolog/collection');
             $split_file = Mage::getStoreConfig('dev/mongolog/split_file');
             if($split_file){
                 $collection = $this->_file;

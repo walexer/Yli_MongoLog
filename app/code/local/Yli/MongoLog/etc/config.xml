@@ -6,6 +6,11 @@
         </Yli_MongoLog>
       </modules>
       <global>
+          <blocks>
+		      <mongolog>
+		        <class>Yli_MongoLog_Block</class>
+		      </mongolog>
+		    </blocks>
           <helpers>
             <mongolog>
               <class>Yli_MongoLog_Helper</class>
@@ -14,7 +19,11 @@
           <models>
              <mongolog>
                 <class>Yli_MongoLog_Model</class>
+                <resourceModel>mongolog_mongo</resourceModel>
              </mongolog>
+             <mongolog_mongo>
+		        <class>Yli_MongoLog_Model_Mongo</class>
+		     </mongolog_mongo>
           </models>
           <log>
             <core>
@@ -22,12 +31,23 @@
             </core>
           </log>
       </global>
+        <admin>
+		    <routers>
+		      <adminhtml>
+		        <args>
+		          <modules>
+		            <Yli_MongoLog>Yli_MongoLog_Adminhtml</Yli_MongoLog>
+		          </modules>
+		        </args>
+		      </adminhtml>
+		    </routers>
+		  </admin>
       <default>
 	    	<dev>
 	    		<mongolog>
 		    		<server>localhost</server>
 		    		<port>27017</port>
-		    		<db>log</db>
+		    		<db>magento</db>
 		    		<collection>log</collection>
 		    		<split_file>0</split_file>
 	    		</mongolog>

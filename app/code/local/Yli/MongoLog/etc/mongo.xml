@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema>
+  <mongolog>
+
+    <!-- General-purpose enumeration storage -->
+    <log>
+      <collection>log</collection>
+      <fields>
+        <_id/>
+        <message/>
+        <level/>
+        <file/>
+        <created/>
+      </fields>
+    </log>
+    
+  </mongolog>
+
+</schema>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+  <menu>
+    <system>
+      <children>
+        <log>
+          <title>Log</title>
+          <action>adminhtml/log</action>
+          <sort_order>106</sort_order>
+        </log>
+      </children>
+    </system>
+  </menu>
+  <acl>
+    <resources>
+      <admin>
+        <children>
+          <system>
+            <children>
+              <log translate="title">
+                <title>Manage Log</title>
+                <sort_order>106</sort_order>
+              </log>
+            </children>
+          </system>
+        </children>
+      </admin>
+    </resources>
+  </acl>
+</config>
